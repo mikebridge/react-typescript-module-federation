@@ -12,6 +12,7 @@ module.exports = (env, argv) => {
   return {
     entry: "./src/index.ts",
     mode: process.env.NODE_ENV || "development",
+    devtool: "eval-source-map",
     devServer: {
       port: 3000,
       open: true,
@@ -50,6 +51,11 @@ module.exports = (env, argv) => {
             ],
           },
         },
+        // {
+        //   enforce: "pre",
+        //   test: /\.js$/,
+        //   loader: "source-map-loader",
+        // }
       ],
     },
 

@@ -8,13 +8,13 @@
 		]
 	},
 	"scripts": {
-		"start": "lerna run --parallel start",
-		"build": "lerna run build",
-		"serve": "lerna run --parallel serve",
-		"clean": "lerna run --parallel clean",
-		"prepare": "lerna run yarn"
+		"build": "yarn workspaces foreach -v -p -i run build:dev",
+		"start": "yarn workspaces foreach -v -p -i run start",
+		"start:lerna": "lerna run --parallel start",
+		"build:lerna": "lerna run build",
+		"serve:lerna": "lerna run --parallel serve",
+		"clean:lerna": "lerna run --parallel clean",
+		"prepare:lerna": "lerna run yarn"
 	},
-	"devDependencies": {
-		"lerna": "3.22.1"
-	}
+	"packageManager": "yarn@3.6.3"
 }

@@ -7,6 +7,10 @@ const Counter = () => {
 
   const location = useLocation();
 
+  const handleError = () => {
+    throw new Error("Throwing error!")
+  }
+
   return (
     <Flex color="#000" gap="1rem" direction="column">
       <Text>
@@ -15,6 +19,9 @@ const Counter = () => {
       <Text>Your click count : {count} </Text>
       <Button onClick={() => setCount((prevState) => prevState * 2)}>
         Click me
+      </Button>
+      <Button onClick={handleError}>
+        Error
       </Button>
       {location.pathname !== "/" && (
         <Button as={Link} to="/">

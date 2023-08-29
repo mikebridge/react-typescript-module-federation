@@ -6,6 +6,7 @@ const deps = require("./package.json").dependencies;
 module.exports = {
   entry: "./src/index.ts",
   mode: "development",
+  devtool: "eval-source-map",
   devServer: {
     port: 3002,
     open: true,
@@ -23,6 +24,11 @@ module.exports = {
         loader: "ts-loader",
         exclude: /node_modules/,
       },
+      // {
+      //   enforce: "pre",
+      //   test: /\.js$/,
+      //   loader: "source-map-loader",
+      // },
     ],
   },
   plugins: [
